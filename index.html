@@ -1,25 +1,59 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Primeiro Site</title>
-    <!-- Link para o arquivo CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <title>online store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <!-- A imagem do seu logo -->
-        <img src=" " alt="Logo do meu site">
-        <h1>Bem-vindo ao Meu Site!</h1>
+    <header class="meli-header">
+        <div class="header-top-bar">
+            <div class="logo-container">
+                <img src="imagens/logo.png" alt="Online Store" class="meli-logo">
+            </div>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Buscar produtos, marcas e muito mais...">
+                <button class="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div class="header-right-items">
+
+
+                
+
+
+                <div class="header-icons">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span class="location-text">Informe seu CEP</span>
+                </div>
+                <div class="cart-icon-container">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom-nav">
+            <div class="categories-container">
+                <i class="fas fa-bars"></i>
+                <span>Categorias</span>
+            </div>
+            <nav class="main-nav">
+                <a href="#" class="nav-link">Ofertas</a>
+                <a href="#" class="nav-link">Cupons</a>
+                <a href="#" class="nav-link">Supermercado</a>
+                <a href="#" class="nav-link">Moda</a>
+                <a href="#" class="nav-link">Mercado Play</a>
+                <a href="#" class="nav-link">Vender</a>
+                <a href="#" class="nav-link">Contato</a>
+            </nav>
+            <div class="account-nav">
+                <a href="#" class="nav-link">Crie a sua conta</a>
+                <a href="#" class="nav-link">Entre</a>
+                <a href="#" class="nav-link">Compras</a>
+            </div>
+        </div>
     </header>
-
-    <main>
-        <p>Esta é a página principal do seu site. Vamos construí-lo juntos!</p>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Meu Site. Todos os direitos reservados.</p>
-    </footer>
 </body>
 </html>
