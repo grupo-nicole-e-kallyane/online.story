@@ -1,38 +1,262 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    margin: 0;
-    padding: 0;
-}
+        /* Importe fontes se necessário (ex: Google Fonts) */
+        /* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap'); */
 
-header {
-    background-color: #fff;
-    padding: 20px;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
-}
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif; /* Fonte padrão */
+            background-color: #f5f5f5; /* Fundo geral */
+        }
 
-header img {
-    width: 150px;
-    height: auto;
-    border-radius: 50%;
-}
+        .meli-header {
+            background-color: #0400D6; /* Amarelo característico do Mercado Livre */
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(255, 255, 255, 0.05);
+        }
 
-h1 {
-    color: #0056b3;
-}
+        /* Barra superior do cabeçalho */
+        .header-top-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
 
-main {
-    padding: 20px;
-}
+        .logo-container {
+            width:15%;
+            flex-shrink: 0; /* Evita que o logo encolha */
+        }
 
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: #fff;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
+        .meli-logo {
+            width: 60%;
+        }
+
+        .search-container {
+            flex-grow: 1; /* Ocupa o espaço disponível */
+            max-width: 600px; /* Limita a largura máxima da barra de busca */
+            display: flex;
+            background-color: #fff;
+            border-radius: 2px;
+            border: 1px solid #ccc; /* Borda sutil */
+            overflow: hidden; /* Para que os cantos arredondados funcionem */
+        }
+
+        .search-input {
+            flex-grow: 1;
+            border: none;
+            padding: 10px 15px;
+            font-size: 14px;
+            outline: none; /* Remove o contorno ao focar */
+        }
+
+        .search-input::placeholder {
+            color: #999;
+        }
+
+        .search-button {
+            background-color: #F4E4EA; /* Fundo amarelo para o botão */
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-left: 1px solid #ccc; /* Borda para separar do input */
+            transition: background-color 0.3s ease;
+        }
+
+        .search-button:hover {
+            background-color: #F4E4EA; /* Amarelo um pouco mais escuro no hover */
+        }
+
+        .search-button i {
+            color: #333;
+        }
+
+        .header-right-items {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .disney-promo {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+            background-color: #273043; /* Fundo escuro da promoção */
+            padding: 5px 10px;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 12px;
+        }
+
+        .disney-logo {
+            height: 20px;
+            margin-right: 5px;
+        }
+
+        .combo-logo {
+            height: 38px;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        .promo-text,
+        .promo-detail {
+            font-weight: 500;
+        }
+
+        .header-icons {
+            display: flex;
+            align-items: center;
+            margin-right: 15px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .header-icons i {
+            margin-right: 5px;
+            font-size: 18px;
+        }
+
+        .location-text {
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .cart-icon-container {
+            cursor: pointer;
+            color: #333;
+        }
+
+        .cart-icon-container i {
+            font-size: 22px;
+        }
+
+        /* Navegação inferior do cabeçalho */
+        .header-bottom-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 10px;
+            border-top: 1px solid #e0e0e0; /* Linha divisória sutil */
+        }
+
+        .categories-container {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 13px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .categories-container:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        .categories-container i {
+            margin-right: 8px;
+            font-size: 18px;
+        }
+
+        .main-nav {
+            display: flex;
+            gap: 15px; /* Espaçamento entre os links */
+        }
+
+        .nav-link {
+            color: #fff;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #00aeff; /* Azul como destaque, similar ao Mercado Livre */
+        }
+
+        .account-nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        /* Responsividade básica */
+        @media (max-width: 1024px) {
+            .search-container {
+                max-width: 400px;
+            }
+            .disney-promo {
+                display: none; /* Oculta a promoção em telas menores */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-top-bar {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .logo-container {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            .search-container {
+                width: 100%;
+                max-width: none; /* Permite ocupar toda a largura */
+                margin-bottom: 10px;
+            }
+            .header-right-items {
+                width: 100%;
+                justify-content: center;
+            }
+            .header-icons, .cart-icon-container {
+                margin-right: 15px;
+            }
+            .header-bottom-nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                padding-top: 10px;
+            }
+            .categories-container {
+                margin-bottom: 10px;
+                width: 100%;
+                justify-content: center;
+            }
+            .main-nav, .account-nav {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-bottom: 10px;
+            }
+            .nav-link {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .meli-logo {
+            
+                width:80%;
+          }
+            .search-input {
+                padding: 8px 10px;
+                font-size: 12px;
+            }
+            .search-button {
+                padding: 8px 10px;
+            }
+            .header-icons i, .cart-icon-container i {
+                font-size: 18px;
+            }
+            .location-text {
+                font-size: 12px;
+            }
+            .categories-container span, .main-nav .nav-link, .account-nav .nav-link {
+                font-size: 11px;
+            }
+        }
+    

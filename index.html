@@ -1,25 +1,69 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Primeiro Site</title>
-    <!-- Link para o arquivo CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <title>Mercado Livre Header</title>
+    <!-- Font Awesome para os ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uW/j/e+1xKqM/1B/G/4r+jP/3b7t7v7t/g9j/s+b9t39o/w3s+t+e+t+e/G9m/3v+x/7w/x/4w/r+y/r+y/G9o=" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <!-- A imagem do seu logo -->
-        <img src=" " alt="Logo do meu site">
-        <h1>Bem-vindo ao Meu Site!</h1>
+
+    <header class="meli-header">
+        <div class="header-top-bar">
+            <div class="logo-container">
+                <a href="#">
+                    <img src="imagens/logo.png" alt="Mercado Livre Logo" class="meli-logo">
+                </a>
+            </div>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Buscar produtos, marcas e muito mais...">
+                <button class="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div class="header-right-items">
+                <div class="disney-promo">
+                    <img src="https://placehold.co/30x20/273043/fff?text=Disney" alt="Disney+ Logo" class="disney-logo">
+                    <span class="promo-text">Assine o</span>
+                    <img src="https://placehold.co/30x20/273043/fff?text=Combo" alt="Combo+" class="combo-logo">
+                    <span class="promo-detail">e ganhe 1 ano de frete grátis</span>
+                </div>
+                <div class="header-icons">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span class="location-text">CEP</span>
+                </div>
+                <div class="cart-icon-container">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+            </div>
+        </div>
+        <nav class="header-bottom-nav">
+            <div class="categories-container">
+                <i class="fas fa-bars"></i>
+                <span>Categorias</span>
+            </div>
+            <div class="main-nav">
+                <a href="#" class="nav-link">Ofertas do dia</a>
+                <a href="#" class="nav-link">Lojas oficiais</a>
+                <a href="#" class="nav-link">Vender</a>
+                <a href="#" class="nav-link">Contato</a>
+            </div>
+            <div class="account-nav">
+                <a href="#" class="nav-link">Sua conta</a>
+                <a href="#" class="nav-link">Compras</a>
+                <a href="#" class="nav-link">Histórico</a>
+            </div>
+        </nav>
     </header>
 
-    <main>
-        <p>Esta é a página principal do seu site. Vamos construí-lo juntos!</p>
+    <main style="padding: 20px; text-align: center; color: #555;">
+        <h1>Bem-vindo ao Mercado Livre</h1>
+        <p>Este é um exemplo de página para o cabeçalho. Adicione mais conteúdo aqui.</p>
     </main>
 
-    <footer>
-        <p>&copy; 2024 Meu Site. Todos os direitos reservados.</p>
-    </footer>
+    <footer>  </footer>
+
 </body>
 </html>
