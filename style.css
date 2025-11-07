@@ -17,13 +17,12 @@
         }
 
         .meli-header {
-            position: relative;
-            background: linear-gradient(90deg, var(--flamengo-black) 0%, #1a0a0a 30%, rgba(200,0,40,0.9) 100%);
-            padding: 16px 24px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.6);
-            color: var(--flamengo-white);
-        }
-
+    position: relative;
+    background: #8a0016;
+    padding: 16px 24px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+    color: var(--flamengo-white);
+}
         /* Barra superior do cabeçalho */
         .header-top-bar {
             display: flex;
@@ -275,11 +274,12 @@
 /* --- 1. SEÇÃO DE VANTAGENS (OS 6 CARTÕES) --- */
 
 .advantage-banner-section {
-    background: var(--flamengo-red) 50%;
+    background: #920018;
     padding: 0 0 80px 0;
     position: relative;
     overflow: hidden;
 }
+
 
 .advantage-container {
     max-width: 1300px; /* Largura máxima para o conteúdo central */
