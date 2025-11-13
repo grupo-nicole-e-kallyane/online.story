@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Loja Oficial do Flamengo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .checkout-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        .checkout-form {
+            background: #222;
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #333;
+        }
+
+        .checkout-form h2 {
+            color: #e30613;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #fff;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #444;
+            background: #111;
+            color: #fff;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .checkout-summary {
+            background: #222;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #e30613;
+            height: fit-content;
+        }
+
+        .checkout-summary h3 {
+            color: #e30613;
+            margin-bottom: 20px;
+        }
+
+        .cart-items {
+            margin-bottom: 20px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .cart-item {
+            background: #111;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border-left: 3px solid #e30613;
+        }
+
+        .cart-item p {
+            color: #ddd;
+            margin: 4px 0;
+            font-size: 0.9rem;
+        }
+
+        .cart-item-name {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .cart-item-price {
+            color: #e30613;
+            font-weight: bold;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            color: #ddd;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #333;
+        }
+
+        .summary-row.total {
+            border-bottom: 2px solid #e30613;
+            font-weight: bold;
+            color: #e30613;
+            font-size: 1.2rem;
+        }
+
+        .btn-checkout {
+            width: 100%;
+            padding: 12px;
+            background: #e30613;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+
+        .btn-checkout:hover {
+            background: #c1020f;
+        }
+
+        .btn-checkout:disabled {
+            background: #666;
+            cursor: not-allowed;
+        }
+
+        .empty-cart {
+            text-align: center;
+            color: #ddd;
+            padding: 40px 20px;
+        }
+
+        .empty-cart a {
+            color: #e30613;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        .back-link {
+            color: #e30613;
+            text-decoration: none;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .checkout-container {
+                grid-template-columns: 1fr;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="meli-header">
+        <div class="header-top-bar">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="imagens/logo1.jpg" alt="Flamengo Logo" class="meli-logo">
+                </a>
+            </div>
+            <div class="header-right-items" style="flex-grow: 1; justify-content: flex-end;">
+                <span style="color: #fff; margin-right: 20px;">Checkout</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="store-main">
+        <div class="checkout-container">
+            <!-- Formulário de Checkout -->
+            <div>
+                <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Voltar à loja</a>
+                
+                <div class="checkout-form" id="checkoutForm">
+                    <h2>Dados de Entrega</h2>
+                    
+                    <div class="form-group">
+                        <label>Nome Completo *</label>
+                        <input type="text" id="fullName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email *</label>
+                        <input type="email" id="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Telefone *</label>
+                        <input type="tel" id="phone" placeholder="(11) 98765-4321" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>CEP *</label>
+                        <input type="text" id="cep" placeholder="12345-678" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Endereço *</label>
+                        <input type="text" id="address" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Número *</label>
+                            <input type="text" id="number" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Complemento</label>
+                            <input type="text" id="complement">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Cidade *</label>
+                            <input type="text" id="city" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Estado *</label>
+                            <select id="state" required>
+                                <option value="">Selecione...</option>
+                                <option value="SP">São Paulo</option>
+                                <option value="RJ">Rio de Janeiro</option>
+                                <option value="MG">Minas Gerais</option>
+                                <option value="BA">Bahia</option>
+                                <option value="SC">Santa Catarina</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                                <option value="DF">Distrito Federal</option>
+                                <option value="GO">Goiás</option>
+                                <option value="PA">Pará</option>
+                                <option value="CE">Ceará</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <h2 style="margin-top: 30px;">Método de Pagamento</h2>
+
+                    <div class="form-group">
+                        <label>Cartão de Crédito *</label>
+                        <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Validade *</label>
+                            <input type="text" id="cardExpiry" placeholder="MM/AA" maxlength="5" required>
+                        </div>
+                        <div class="form-group">
+                            <label>CVV *</label>
+                            <input type="text" id="cardCVV" placeholder="123" maxlength="3" required>
+                        </div>
+                    </div>
+
+                    <button class="btn-checkout" onclick="finalizeOrder()">Finalizar Compra</button>
+                </div>
+            </div>
+
+            <!-- Resumo do Pedido -->
+            <div class="checkout-summary" id="summaryContainer">
+                <h3>Resumo do Pedido</h3>
+                <div class="cart-items" id="cartItemsList">
+                    <!-- Itens do carrinho -->
+                </div>
+
+                <div class="summary-row">
+                    <span>Subtotal:</span>
+                    <span id="subtotal">R$ 0,00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Frete:</span>
+                    <span id="shipping">R$ 0,00</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total:</span>
+                    <span id="total">R$ 0,00</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-bottom">
+            <p>© <span id="year"></span> Clube de Regatas do Flamengo — Loja Oficial. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="cart.js"></script>
+    <script>
+        // Carregar dados do carrinho e preencher resumo
+        document.addEventListener('DOMContentLoaded', function() {
+            const yearEl = document.getElementById('year');
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+            loadCheckoutSummary();
+        });
+
+        function loadCheckoutSummary() {
+            const checkout = cart.getCartForCheckout();
+            const itemsList = document.getElementById('cartItemsList');
+            const subtotalEl = document.getElementById('subtotal');
+            const shippingEl = document.getElementById('shipping');
+            const totalEl = document.getElementById('total');
+            const summaryContainer = document.getElementById('summaryContainer');
+            const checkoutForm = document.getElementById('checkoutForm');
+
+            if (checkout.items.length === 0) {
+                itemsList.innerHTML = '<div class="empty-cart"><p>Seu carrinho está vazio</p><a href="index.html">Voltar à loja</a></div>';
+                document.querySelector('.btn-checkout').disabled = true;
+                return;
+            }
+
+            itemsList.innerHTML = checkout.items.map((item, idx) => `
+                <div class="cart-item">
+                    <p class="cart-item-name">${item.name}</p>
+                    <p>Tamanho: ${item.size} | Cor: ${item.color}</p>
+                    <p>Quantidade: ${item.quantity}x <span class="cart-item-price">R$ ${(item.price * item.quantity).toFixed(2).replace('.', ',')}</span></p>
+                </div>
+            `).join('');
+
+            subtotalEl.textContent = `R$ ${checkout.subtotal.toFixed(2).replace('.', ',')}`;
+            shippingEl.textContent = checkout.subtotal >= 200 ? 'GRÁTIS' : `R$ ${checkout.shipping.toFixed(2).replace('.', ',')}`;
+            totalEl.textContent = `R$ ${checkout.total.toFixed(2).replace('.', ',')}`;
+        }
+
+        function finalizeOrder() {
+            // Validar formulário
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const cep = document.getElementById('cep').value;
+            const address = document.getElementById('address').value;
+            const number = document.getElementById('number').value;
+            const city = document.getElementById('city').value;
+            const state = document.getElementById('state').value;
+            const cardNumber = document.getElementById('cardNumber').value;
+            const cardExpiry = document.getElementById('cardExpiry').value;
+            const cardCVV = document.getElementById('cardCVV').value;
+
+            if (!fullName || !email || !phone || !cep || !address || !number || !city || !state || !cardNumber || !cardExpiry || !cardCVV) {
+                alert('Por favor, preencha todos os campos obrigatórios!');
+                return;
+            }
+
+            // Validar email
+            if (!email.includes('@')) {
+                alert('Email inválido!');
+                return;
+            }
+
+            // Gerar número de pedido
+            const orderNumber = 'FL' + Date.now();
+            const checkout = cart.getCartForCheckout();
+
+            // Simular confirmação
+            const message = `
+Pedido Confirmado!
+
+Número do Pedido: ${orderNumber}
+Nome: ${fullName}
+Email: ${email}
+
+Total: R$ ${checkout.total.toFixed(2).replace('.', ',')}
+
+Seu pedido foi recebido e será processado em breve.
+Você receberá um email de confirmação em ${email}
+
+Obrigado por comprar na Loja Oficial do Flamengo!
+            `;
+
+            alert(message);
+
+            // Limpar carrinho
+            cart.clear();
+
+            // Redirecionar para home
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 1000);
+        }
+
+        // Máscara para cartão de crédito
+        document.getElementById('cardNumber')?.addEventListener('input', function(e) {
+            e.target.value = e.target.value.replace(/\s/g, '').replace(/(\d{4})/g, '$1 ').trim();
+        });
+
+        // Máscara para validade
+        document.getElementById('cardExpiry')?.addEventListener('input', function(e) {
+            e.target.value = e.target.value.replace(/\D/g, '').replace(/(\d{2})(\d)/, '$1/$2').substring(0, 5);
+        });
+
+        // Máscara para CEP
+        document.getElementById('cep')?.addEventListener('input', function(e) {
+            e.target.value = e.target.value.replace(/\D/g, '').replace(/(\d{5})(\d)/, '$1-$2').substring(0, 9);
+        });
+
+        // Máscara para telefone
+        document.getElementById('phone')?.addEventListener('input', function(e) {
+            e.target.value = e.target.value.replace(/\D/g, '').replace(/(\d{0,2})(\d{0,5})(\d{0,4})/, '($1) $2-$3').trim();
+        });
+    </script>
+</body>
+</html>
