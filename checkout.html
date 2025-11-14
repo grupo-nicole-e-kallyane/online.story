@@ -352,6 +352,7 @@
             const cep = document.getElementById('cep').value;
             const address = document.getElementById('address').value;
             const number = document.getElementById('number').value;
+            const complement = document.getElementById('complement').value;
             const city = document.getElementById('city').value;
             const state = document.getElementById('state').value;
             const cardNumber = document.getElementById('cardNumber').value;
@@ -373,31 +374,46 @@
             const orderNumber = 'FL' + Date.now();
             const checkout = cart.getCartForCheckout();
 
-            // Simular confirmação
-            const message = `
-Pedido Confirmado!
+            // Montar objeto do pedido para salvar
+            const order = {
+                id: orderNumber,
+                date: new Date().toISOString(),
+                customer: {
+                    name: fullName,
+                    email: email,
+                    phone: phone,
+                    cep: cep,
+                    address: address,
+                    number: number,
+                    complement: complement,
+                    city: city,
+                    state: state
+                },
+                items: checkout.items,
+                subtotal: checkout.subtotal,
+                shipping: checkout.subtotal >= 200 ? 0 : checkout.shipping,
+                total: checkout.total,
+                status: 'Recebido'
+            };
 
-Número do Pedido: ${orderNumber}
-Nome: ${fullName}
-Email: ${email}
+            // Salvar no localStorage (array de pedidos)
+            const ordersKey = 'flamengoOrders';
+            const existing = JSON.parse(localStorage.getItem(ordersKey) || '[]');
+            existing.push(order);
+            localStorage.setItem(ordersKey, JSON.stringify(existing));
 
-Total: R$ ${checkout.total.toFixed(2).replace('.', ',')}
-
-Seu pedido foi recebido e será processado em breve.
-Você receberá um email de confirmação em ${email}
-
-Obrigado por comprar na Loja Oficial do Flamengo!
-            `;
+            // Mensagem de confirmação ao usuário
+            const message = `Pedido Confirmado!\n\nNúmero do Pedido: ${orderNumber}\nNome: ${fullName}\nEmail: ${email}\n\nTotal: R$ ${checkout.total.toFixed(2).replace('.', ',')}\n\nObrigado por comprar na Loja Oficial do Flamengo!`;
 
             alert(message);
 
             // Limpar carrinho
             cart.clear();
 
-            // Redirecionar para home
+            // Redirecionar para histórico de pedidos
             setTimeout(() => {
-                window.location.href = 'index.html';
-            }, 1000);
+                window.location.href = 'orders.html';
+            }, 800);
         }
 
         // Máscara para cartão de crédito
