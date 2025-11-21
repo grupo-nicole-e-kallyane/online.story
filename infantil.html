@@ -194,17 +194,18 @@
     </footer>
 
     <script src="cart.js"></script>
+    <script src="imgFallback.js"></script>
     <script>
         // Dados de produtos infantis
         const kids = [
             { name: 'Camisa Infantil Flamengo', price: 89.90, image: 'imagens/camisaFla.jpg', description: 'Camisa oficial infantil', sizes: ['2', '4', '6', '8', '10', '12'], colors: ['Vermelho'] },
-            { name: 'Calção Infantil Flamengo', price: 59.90, image: 'imagens/calcao.jpg', description: 'Calção de treino infantil', sizes: ['2', '4', '6', '8', '10', '12'], colors: ['Preto', 'Vermelho'] },
-            { name: 'Conjunto Infantil 2 Peças', price: 129.90, image: 'imagens/conjunto.jpg', description: 'Camisa + calção oficial', sizes: ['2', '4', '6', '8', '10', '12'], colors: ['Vermelho'] },
-            { name: 'Meia Infantil Flamengo Pack 3', price: 39.90, image: 'imagens/meia.jpg', description: 'Pacote com 3 pares infantil', sizes: ['P', 'M'], colors: ['Vermelho'] },
-            { name: 'Boné Infantil Flamengo', price: 44.90, image: 'imagens/bone_infantil.jpg', description: 'Boné infantil com velcro', sizes: ['Único'], colors: ['Preto', 'Vermelho'] },
-            { name: 'Jaqueta Infantil Flamengo', price: 159.90, image: 'imagens/jaqueta.jpg', description: 'Jaqueta de treino infantil', sizes: ['2', '4', '6', '8', '10', '12'], colors: ['Preto com Vermelho'] },
-            { name: 'Mochila Escolar Flamengo', price: 99.90, image: 'imagens/mochila.jpg', description: 'Mochila escolar com bolsos', sizes: ['Único'], colors: ['Vermelho'] },
-            { name: 'Chinelo Infantil Flamengo', price: 49.90, image: 'imagens/chinelo.jpg', description: 'Chinelo confortável infantil', sizes: ['22', '24', '26', '28', '30'], colors: ['Vermelho'] }
+            { name: 'Calção Infantil Flamengo', price: 59.90, image: 'imagens/CalçãoInfantil.jpg', description: 'Calção de treino infantil', sizes: ['2', '4', '6', '8', '10', '12'], colors: ['Preto', 'Vermelho'] },
+            { name: 'Conjunto Infantil 2 Peças', price: 129.90, image: 'imagens/ConjuntoInfantil.jpg', description: 'Camisa + calção oficial', sizes: ['2', '4', '6', '8', '10', '12'], colors: ['Vermelho'] },
+            { name: 'Meia Infantil Flamengo Pack 3', price: 39.90, image: 'imagens/MeiaInfantil.jpg', description: 'Pacote com 3 pares infantil', sizes: ['P', 'M'], colors: ['Vermelho'] },
+            { name: 'Boné Infantil Flamengo', price: 44.90, image: 'imagens/BoneInfantil.jpg', description: 'Boné infantil com velcro', sizes: ['Único'], colors: ['Preto', 'Vermelho'] },
+            { name: 'Jaqueta Infantil Flamengo', price: 159.90, image: 'imagens/JaquetaInfantil.jpg', description: 'Jaqueta de treino infantil', sizes: ['2', '4', '6', '8', '10', '12'], colors: ['Preto com Vermelho'] },
+            { name: 'Mochila Escolar Flamengo', price: 99.90, image: 'imagens/MochilaInfantil.jpg', description: 'Mochila escolar com bolsos', sizes: ['Único'], colors: ['Vermelho'] },
+            { name: 'Chinelo Infantil Flamengo', price: 49.90, image: 'imagens/ChIneloInfantil.jpg', description: 'Chinelo confortável infantil', sizes: ['22', '24', '26', '28', '30'], colors: ['Vermelho'] }
         ];
 
         document.addEventListener('DOMContentLoaded', function() {

@@ -194,17 +194,18 @@
     </footer>
 
     <script src="cart.js"></script>
+    <script src="imgFallback.js"></script>
     <script>
         // Dados de acessórios
         const accessories = [
-            { name: 'Boné Flamengo Oficial', price: 59.90, image: 'imagens/acessorio1.jpg', description: 'Boné oficial bordado', sizes: ['Único'], colors: ['Preto', 'Vermelho'] },
-            { name: 'Lenço Flamengo Premium', price: 39.90, image: 'imagens/acessorio2.jpg', description: 'Lenço em algodão premium', sizes: ['Único'], colors: ['Vermelho'] },
-            { name: 'Meia Flamengo Pack 3', price: 49.90, image: 'imagens/acessorio3.jpg', description: 'Pacote com 3 pares', sizes: ['P', 'M', 'G'], colors: ['Vermelho'] },
-            { name: 'Chaveiro Flamengo Metal', price: 19.90, image: 'imagens/acessorio4.jpg', description: 'Chaveiro em metal cromado', sizes: ['Único'], colors: ['Prata'] },
-            { name: 'Bandeira Flamengo 1,5m', price: 34.90, image: 'imagens/acessorio5.jpg', description: 'Bandeira oficial para eventos', sizes: ['Único'], colors: ['Vermelho e Preto'] },
-            { name: 'Relógio Flamengo', price: 89.90, image: 'imagens/acessorio6.jpg', description: 'Relógio digital esportivo', sizes: ['Único'], colors: ['Preto'] },
-            { name: 'Mochila Flamengo Escolar', price: 99.90, image: 'imagens/acessorio7.jpg', description: 'Mochila reforçada com logo 3D', sizes: ['Único'], colors: ['Vermelho'] },
-            { name: 'Pulseira Flamengo Silicone', price: 14.90, image: 'imagens/acessorio8.jpg', description: 'Pulseira em silicone resistente', sizes: ['P', 'M', 'G'], colors: ['Vermelho'] }
+            { name: 'Boné Flamengo Oficial', price: 59.90, image: 'imagens/boneFla.jpg', description: 'Boné oficial bordado', sizes: ['Único'], colors: ['Preto', 'Vermelho'] },
+            { name: 'Lenço Flamengo Premium', price: 39.90, image: 'imagens/lençoFla.jpg', description: 'Lenço em algodão premium', sizes: ['Único'], colors: ['Vermelho'] },
+            { name: 'Meia Flamengo Pack 3', price: 49.90, image: 'imagens/meiaFLa.jpg', description: 'Pacote com 3 pares', sizes: ['P', 'M', 'G'], colors: ['Vermelho'] },
+            { name: 'Chaveiro Flamengo Metal', price: 19.90, image: 'imagens/chaveirofla.jpg', description: 'Chaveiro em metal cromado', sizes: ['Único'], colors: ['Prata'] },
+            { name: 'Bandeira Flamengo 1,5m', price: 34.90, image: 'imagens/bandeirafla.jpg', description: 'Bandeira oficial para eventos', sizes: ['Único'], colors: ['Vermelho e Preto'] },
+            { name: 'Relógio Flamengo', price: 89.90, image: 'imagens/relogio.jpg', description: 'Relógio digital esportivo', sizes: ['Único'], colors: ['Preto'] },
+            { name: 'Mochila Flamengo Escolar', price: 99.90, image: 'imagens/mochila.jpg', description: 'Mochila reforçada com logo 3D', sizes: ['Único'], colors: ['Vermelho'] },
+            { name: 'Pulseira Flamengo Silicone', price: 14.90, image: 'imagens/pulseira.jpg', description: 'Pulseira em silicone resistente', sizes: ['P', 'M', 'G'], colors: ['Vermelho'] }
         ];
 
         document.addEventListener('DOMContentLoaded', function() {

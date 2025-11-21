@@ -211,17 +211,18 @@
     </footer>
 
     <script src="cart.js"></script>
+    <script src="imgFallback.js"></script>
     <script>
         // Dados de promoções
         const promos = [
-            { name: 'Camisa 2024 - Liquidação', price: 99.90, oldPrice: 199.90, discount: '50%', image: 'imagens/camisaFla.jpg', description: 'Camisa anterior em liquidação', sizes: ['P', 'M', 'G', 'GG'], colors: ['Vermelho'] },
-            { name: 'Boné Flamengo Outlet', price: 29.90, oldPrice: 59.90, discount: '50%', image: 'imagens/acessorio1.jpg', description: 'Boné com pequeno amassado', sizes: ['Único'], colors: ['Preto', 'Vermelho'] },
-            { name: 'Kit 3 Camisetas', price: 149.90, oldPrice: 299.70, discount: '50%', image: 'imagens/camisaFla.jpg', description: 'Kit com 3 camisetas básicas', sizes: ['P', 'M', 'G'], colors: ['Variadas'] },
-            { name: 'Meia Pack Promoção', price: 19.90, oldPrice: 49.90, discount: '60%', image: 'imagens/acessorio3.jpg', description: 'Pack 3 pares com desconto total', sizes: ['P', 'M'], colors: ['Vermelho'] },
+            { name: 'Camisa 2024 - Liquidação', price: 99.90, oldPrice: 199.90, discount: '50%', image: 'imagens/camisa2024.jpg', description: 'Camisa anterior em liquidação', sizes: ['P', 'M', 'G', 'GG'], colors: ['Vermelho'] },
+            { name: 'Boné Flamengo Outlet', price: 29.90, oldPrice: 59.90, discount: '50%', image: 'imagens/BonéOutlet.jpg', description: 'Boné com pequeno amassado', sizes: ['Único'], colors: ['Preto', 'Vermelho'] },
+            { name: 'Kit 3 Camisetas', price: 149.90, oldPrice: 299.70, discount: '50%', image: 'imagens/kitcamisas.jpg', description: 'Kit com 3 camisetas básicas', sizes: ['P', 'M', 'G'], colors: ['Variadas'] },
+            { name: 'Meia Pack Promoção', price: 19.90, oldPrice: 49.90, discount: '60%', image: 'imagens/meiapack.jpg', description: 'Pack 3 pares com desconto total', sizes: ['P', 'M'], colors: ['Vermelho'] },
             { name: 'Jaqueta Clearance', price: 79.90, oldPrice: 159.90, discount: '50%', image: 'imagens/jaqueta.jpg', description: 'Modelo anterior com estoque limitado', sizes: ['P', 'M', 'G', 'GG'], colors: ['Preto'] },
             { name: 'Mochila Black Friday', price: 59.90, oldPrice: 99.90, discount: '40%', image: 'imagens/mochila.jpg', description: 'Mochila com pequeno defeito', sizes: ['Único'], colors: ['Vermelho'] },
-            { name: 'Uniforme Infantil Flash', price: 79.90, oldPrice: 129.90, discount: '38%', image: 'imagens/conjunto.jpg', description: 'Uniforme infantil com destaque de preço', sizes: ['2', '4', '6', '8'], colors: ['Vermelho'] },
-            { name: 'Lenço Estoque Limitado', price: 14.90, oldPrice: 39.90, discount: '63%', image: 'imagens/acessorio2.jpg', description: 'Últimas unidades da coleção', sizes: ['Único'], colors: ['Vermelho'] }
+            { name: 'Uniforme Infantil Flash', price: 79.90, oldPrice: 129.90, discount: '38%', image: 'imagens/uniforme.jpg', description: 'Uniforme infantil com destaque de preço', sizes: ['2', '4', '6', '8'], colors: ['Vermelho'] },
+            { name: 'Lenço Estoque Limitado', price: 14.90, oldPrice: 39.90, discount: '63%', image: 'imagens/lençoFla.jpg', description: 'Últimas unidades da coleção', sizes: ['Único'], colors: ['Vermelho'] }
         ];
 
         document.addEventListener('DOMContentLoaded', function() {

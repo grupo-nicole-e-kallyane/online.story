@@ -194,17 +194,18 @@
     </footer>
 
     <script src="cart.js"></script>
+    <script src="imgFallback.js"></script>
     <script>
         // Dados de camisas oficiais
         const shirts = [
-            { name: 'Camisa Flamengo 2025 Home', price: 199.90, image: 'imagens/camisaFla.jpg', description: 'Camisa oficial 2025 Home Kit', sizes: ['P', 'M', 'G', 'GG'], colors: ['Vermelho', 'Branco'] },
-            { name: 'Camisa Flamengo 2025 Away', price: 189.90, image: 'imagens/camisaFla.jpg', description: 'Camisa oficial 2025 Away Kit', sizes: ['P', 'M', 'G', 'GG'], colors: ['Branco', 'Preto'] },
-            { name: 'Camisa Flamengo Retrô 1981', price: 149.90, image: 'imagens/CamisaRetro.jpg', description: 'Edição retrô clássica', sizes: ['P', 'M', 'G', 'GG'], colors: ['Vermelho e Preto'] },
-            { name: 'Camisa Flamengo Feminina', price: 179.90, image: 'imagens/camisaFla.jpg', description: 'Corte e ajuste feminino', sizes: ['P', 'M', 'G'], colors: ['Vermelho'] },
-            { name: 'Camisa Flamengo Gold Edition', price: 219.90, image: 'imagens/camisaFla.jpg', description: 'Edição limitada com detalhe dourado', sizes: ['P', 'M', 'G', 'GG'], colors: ['Vermelho e Ouro'] },
-            { name: 'Camisa Flamengo Treino', price: 129.90, image: 'imagens/camisaFla.jpg', description: 'Camisa de treino oficial', sizes: ['P', 'M', 'G', 'GG'], colors: ['Vermelho'] },
-            { name: 'Camisa Flamengo Infantil', price: 99.90, image: 'imagens/camisaFla.jpg', description: 'Para os pequenos torcedores', sizes: ['2', '4', '6', '8', '10', '12'], colors: ['Vermelho'] },
-            { name: 'Camisa Flamengo Long Sleeve', price: 159.90, image: 'imagens/camisaFla.jpg', description: 'Manga longa oficial', sizes: ['P', 'M', 'G', 'GG'], colors: ['Vermelho'] }
+            { name: 'Camisa Flamengo 2025 Home', price: 199.90, image: 'imagens/camisaHome.jpg', description: 'Camisa oficial 2025 Home Kit', sizes: ['P', 'M', 'G', 'GG'], colors: ['Vermelho', 'Branco'] },
+            { name: 'Camisa Flamengo 2025 Away', price: 189.90, image: 'imagens/camisaAway.jpg', description: 'Camisa oficial 2025 Away Kit', sizes: ['P', 'M', 'G', 'GG'], colors: ['Branco', 'Preto'] },
+            { name: 'Camisa Flamengo Retrô 1981', price: 149.90, image: 'imagens/camisaRetro1981.jpg', description: 'Edição retrô clássica', sizes: ['P', 'M', 'G', 'GG'], colors: ['Vermelho e Preto'] },
+            { name: 'Camisa Flamengo Feminina', price: 179.90, image: 'imagens/camisaFemenina.jpg', description: 'Corte e ajuste feminino', sizes: ['P', 'M', 'G'], colors: ['Vermelho'] },
+            { name: 'Camisa Flamengo Gold Edition', price: 219.90, image: 'imagens/camisaGold.jpg', description: 'Edição limitada com detalhe dourado', sizes: ['P', 'M', 'G', 'GG'], colors: ['Vermelho e Ouro'] },
+            { name: 'Camisa Flamengo Treino', price: 129.90, image: 'imagens/camisaTreino.jpg', description: 'Camisa de treino oficial', sizes: ['P', 'M', 'G', 'GG'], colors: ['Vermelho'] },
+            { name: 'Camisa Flamengo Infantil', price: 99.90, image: 'imagens/camisaInfantil.jpg', description: 'Para os pequenos torcedores', sizes: ['2', '4', '6', '8', '10', '12'], colors: ['Vermelho'] },
+            { name: 'Camisa Flamengo Long Sleeve', price: 159.90, image: 'imagens/CamisaLongSleev.jpg', description: 'Manga longa oficial', sizes: ['P', 'M', 'G', 'GG'], colors: ['Vermelho'] }
         ];
 
         document.addEventListener('DOMContentLoaded', function() {
